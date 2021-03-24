@@ -1,0 +1,30 @@
+.register {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-weight: 500;
+  margin: 20% 10%;
+}
+
+.register form {
+  margin: 10% 10%;
+  max-width: 320px;
+}
+
+.register_heading {
+  color: purple;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+@media all and (min-width: 480px) {
+  .register {
+    padding: 60px 0;
+    margin: 8% 30%;
+  }
+
+  .register form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

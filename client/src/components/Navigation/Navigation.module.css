@@ -1,0 +1,15 @@
+.nav_brand,
+.nav_link {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_brand {
+  font-weight: bolder;
+}
+
+.nav_brand:hover,
+.nav_link:hover {
+  color: darkblue;
+}
