@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {REGISTER_SUCCESS, REGISTER_FAIL,
-     USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT} from './actionTypes';
+     USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, 
+     LOGIN_FAIL, LOGOUT, CLEAR_PROFILE} from './actionTypes';
 import {setAlert} from './alert';
 import setAuthToken from '../../utils/setAuthToken';
 
@@ -47,8 +48,8 @@ export const register = ({name, email, password}) => async dispatch => {
         if (err){
             err.forEach(error => dispatch(setAlert(error.msg, 'danger')));
         }
-        console.error(error.message);
-        console.error(err);
+        // console.error(error.message);
+        // console.error(err);
         dispatch({
             type: REGISTER_FAIL
         });
@@ -90,4 +91,5 @@ export const login = ({email, password}) => async dispatch => {
 // LOGOUT
 export const logout = () => dispatch => {
     dispatch({type: LOGOUT});
+    dispatch({type: CLEAR_PROFILE});
 }

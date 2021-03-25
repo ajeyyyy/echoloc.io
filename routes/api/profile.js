@@ -6,7 +6,7 @@ const { body, validationResult } = require('express-validator');
 const auth = require('../../middlewares/auth');
 const ProfileModel = require('../../models/Profile.model');
 const UserModel = require('../../models/User.model');
-
+const PostModel = require('../../models/Post.model');
 
 // @route GET api/profile/me
 // @desc GET current user profile
@@ -50,7 +50,8 @@ router.get('/user/:user_id', async (req, res) => {
 // @access Private
 router.delete('/', auth, async (req, res) => {
     try {
-        // @todo - Remove user posts
+        // Remove user posts
+        await PostModel.deleteMany({ user: req.user.id });
         // Remove profile
         await ProfileModel.findOneAndRemove({ user: req.user.id });
         // Remove User
@@ -89,7 +90,7 @@ async (req, res) => {
     if(website) profileFields.website = website;
     if(location) profileFields.location = location;
     if(status) profileFields.status = status;
-    if(skills) profileFields.skills = skills.replace(/ +/g, "").split(',');
+    if(skills) profileFields.skills = skills.toString().replace(/ +/g, "").split(',');
     if(bio) profileFields.bio = bio;
 
     profileFields.social = {};

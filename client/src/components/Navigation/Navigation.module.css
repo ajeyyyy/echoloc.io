@@ -13,3 +13,7 @@
 .nav_link:hover {
   color: darkblue;
 }
+
+.navbar {
+  z-index: 100;
+}

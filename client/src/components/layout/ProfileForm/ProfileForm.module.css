@@ -1,0 +1,24 @@
+.profile {
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5% 5%;
+}
+
+#collapse_content {
+  margin-top: 10px;
+}
+
+.profile_heading {
+  color: purple;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.formBtns {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

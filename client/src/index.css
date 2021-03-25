@@ -3,11 +3,14 @@
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100%;
+  width: 100%;
   display: flex;
   font-weight: 400;
   font-family: sans-serif;
-  background: #12c2e9; /* fallback for old browsers */
+  background: #12c2e9;
+  /* fallback for old browsers */
 
   /* background: -webkit-linear-gradient(
     to right,
