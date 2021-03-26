@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { Button, Card, Container, Row, Col, Image } from 'react-bootstrap';
 import styles from '../PostItem.module.css';
@@ -18,7 +18,7 @@ const CommentItem = ({
              <Card className={styles.post}>
                 <Container style={{padding: '0'}}>
                     <Row className={styles.row}>
-                        <Col className={styles.post__user} sm={2}>
+                        <Col as={Link} to={`/profile/${user}`} className={styles.post__user} sm={2}>
                             <Image className={styles.post__userImg} src={avatar} roundedCircle/>
                             <p>{name}</p>
                         </Col>

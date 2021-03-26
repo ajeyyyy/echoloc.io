@@ -29,7 +29,7 @@ function Register({setAlert, register, isAuthenticated}) {
 
      // Redirect if isAuthenticated is true(logged in)
      if(isAuthenticated){
-        return <Redirect to="/" />
+        return <Redirect to="/dashboard" />
     }
 
     return (

@@ -29,7 +29,7 @@ const PostItem = ({auth, post, addLike, deletePost, showActions}) => {
             <Card className={styles.post}>
                 <Container style={{padding: '0'}}>
                     <Row className={styles.row}>
-                        <Col className={styles.post__user} sm={2}>
+                        <Col as={Link} to={`/profile/${user}`} className={styles.post__user} sm={2}>
                             <Image className={styles.post__userImg} src={avatar} roundedCircle/>
                             <p>{name}</p>
                         </Col>
@@ -79,7 +79,7 @@ PostItem.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    auth: state.authReducer
+    auth: state.authReducer,
 })
 
 export default connect(mapStateToProps, {addLike, deletePost})(PostItem);

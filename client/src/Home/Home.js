@@ -15,8 +15,7 @@ const Home = ({isAuthenticated}) => {
     return (
         <div className={styles.home}>
            <h1>Echoloc.io</h1>
-           <h3 className={styles.homeText}>Create a job profile/portfolio, share posts and 
-               get help from other job seekers and recruiters</h3>
+           <h3 className={styles.homeText}>Create a job profile/portfolio, share posts and get help from other job seekers and recruiters</h3>
             <div className={styles.home_btn}>
                <Button className={styles.signUp}  as={Link} to={`/register`} variant="info">
                     Sign Up
