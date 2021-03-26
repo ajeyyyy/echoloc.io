@@ -54,7 +54,7 @@ const App = () => {
               <PrivateRoute exact path="/edit_profile" component={EditProfile} />
               <PrivateRoute exact path="/add_experience" component={AddExperience} />
               <PrivateRoute exact path="/add_Education" component={AddEducation} />
-              <PrivateRoute exact path="/posts/:id" component={Post} />
+              <PrivateRoute exact path="/post/:id" component={Post} />
               <PrivateRoute exact path="/posts" component={Posts} />
               <Route path="/">
                 <Home />

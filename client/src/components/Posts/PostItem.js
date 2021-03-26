@@ -53,8 +53,10 @@ const PostItem = ({auth, post, addLike, deletePost, showActions}) => {
                                 </Card.Link> */}
                             </div>
                             <div className={styles.post_links}>
-                                <Button className={styles.post_button} as={Link} to={`/posts/${_id}`}
+                                <Link to={`/post/${_id}`}>
+                                    <Button className={styles.post_button}
                                 variant="info">Comment {comments?.length}</Button>
+                                </Link>
                                 {!auth.loading && auth.user && user === auth.user._id && 
                                     <Button onClick={(e) => deletePost(_id)} className={styles.post_button} variant="danger">Delete Post</Button>
                                 }

@@ -82,12 +82,12 @@ export const createPost = formData => async dispatch => {
 //  Get single post
 export const viewPost = id => async dispatch => {
     try {
-        const res = await axios.get('api/post/'+id);
+        const res = await axios.get(`api/post/${id}`);
         // const res = await axios.get('http://localhost:5000/api/post/'+id);
 
         dispatch({type: VIEW_POST, payload: res.data});
     } catch (error) {
-        console.error(error.res)
+        console.error(error.response)
         dispatch({type: POST_ERROR,
             payload: {msg: error.response.statusText, 
                 status: error.response.status}})
