@@ -40,7 +40,7 @@ async (req, res) => {
 // @access Public
 router.get('/', async (req, res) => {
     try {
-        const posts = await PostModel.find().sort({date: 'desc'});
+        const posts = await PostModel.find().sort({date: -1});
         res.json(posts);
     } catch (error) {
         console.error(error.message);
@@ -95,9 +95,10 @@ router.put('/like/:id', auth, async (req, res) => {
         if(!post) return res.status(400).json({ msg: 'Post not found' });
 
         if(post.likes.id(req.user.id))
-            return res.status(400).json({ msg: 'Post already liked'});
-
-        post.likes.unshift({ _id: req.user.id, user: req.user.id });
+            post.likes.id(req.user.id).remove();
+            // return res.status(400).json({ msg: 'Post already liked'});
+        else
+            post.likes.unshift({ _id: req.user.id, user: req.user.id });
 
         await post.save();
         res.json(post.likes);

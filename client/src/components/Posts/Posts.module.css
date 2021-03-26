@@ -1,0 +1,25 @@
+.posts__head {
+  color: darkblue;
+  margin: 0 2%;
+  margin-bottom: 20px;
+}
+
+.posts {
+  color: black;
+  font-weight: 500;
+  margin: 20% 5%;
+  justify-content: space-evenly;
+}
+
+.posts > h4 {
+  color: white;
+  margin: 0 2%;
+  margin-bottom: 20px;
+}
+
+@media all and (min-width: 480px) {
+  .posts {
+    padding: 60px 0;
+    margin: 0 2%;
+  }
+}

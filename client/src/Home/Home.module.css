@@ -1,0 +1,25 @@
+.home {
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  /* text-justify: inter-word; */
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.homeText {
+  color: black;
+  font-weight: 200;
+}
+
+.home_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.signUp {
+  margin-right: 5%;
+}
