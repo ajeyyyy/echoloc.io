@@ -82,7 +82,8 @@ export const createPost = formData => async dispatch => {
 //  Get single post
 export const viewPost = id => async dispatch => {
     try {
-        const res = await axios.get('http://localhost:5000/api/post/'+id);
+        const res = await axios.get('api/post/'+id);
+        // const res = await axios.get('http://localhost:5000/api/post/'+id);
 
         dispatch({type: VIEW_POST, payload: res.data});
     } catch (error) {
@@ -101,7 +102,8 @@ export const addComment = (postId, formData) => async dispatch => {
         }
     }
     try {
-        const res = await axios.post(`http://localhost:5000/api/post/comment/${postId}`, formData, config);
+        const res = await axios.post(`api/post/comment/${postId}`, formData, config);
+        // const res = await axios.post(`http://localhost:5000/api/post/comment/${postId}`, formData, config);
 
         dispatch({type: ADD_COMMENT, payload: res.data});
 
@@ -117,7 +119,8 @@ export const addComment = (postId, formData) => async dispatch => {
 //  Delete Comment
 export const deleteComment = (postId, commentId) => async dispatch => {
     try {
-       await axios.delete(`http://localhost:5000/api/post/comment/${postId}/${commentId}`, );
+       await axios.delete(`api/post/comment/${postId}/${commentId}`, );
+    //    await axios.delete(`http://localhost:5000/api/post/comment/${postId}/${commentId}`, );
 
         dispatch({type: REMOVE_COMMENT, payload: commentId});
 
