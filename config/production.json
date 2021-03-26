@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://ajay123:ajay123@echoloc.y6sfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtToken": "supersecrettoken"
+}
